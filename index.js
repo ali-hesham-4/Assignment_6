@@ -4,7 +4,7 @@ import userRouter from './src/modules/users/users.routes.js'
 import postRouter from './src/modules/posts/posts.routes.js'
 import commentRouter from './src/modules/comments/comments.routes.js'
 const app = express()
-const port = 3000
+const port = process.env.port || 3000
 
 
 app.use(express.json())
