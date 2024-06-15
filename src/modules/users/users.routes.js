@@ -2,7 +2,6 @@ import { Router } from "express";
 import * as  UC  from "./users.controller.js";
 const router = Router()
 
-router.get("/", UC.getUsers)
 router.post("/", UC.registeration)
 router.get("/login", UC.login)
 router.get("/logout", UC.logout)
