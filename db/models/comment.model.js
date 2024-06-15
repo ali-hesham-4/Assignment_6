@@ -10,14 +10,16 @@ const commentModel = sequelize.define("comment" ,{
     },
 })
 
-commentModel.belongsTo(postModel)
+commentModel.belongsTo(postModel,{
+    foreignKey:"postID"})
 postModel.hasMany(commentModel,{
     foreignKey:"postID",
     onDelete:"CASCADE",
     onUpdate:"CASCADE",
 });
 
-commentModel.belongsTo(userModel)
+commentModel.belongsTo(userModel,{
+    foreignKey:"userID"})
 userModel.hasMany(commentModel,{
     foreignKey:"userID",
     onDelete:"CASCADE",

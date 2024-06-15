@@ -12,11 +12,11 @@ const postModel = sequelize.define("post" ,{
         allowNull: false,
     },
 })
-userModel.hasMany(postModel);
+userModel.hasMany(postModel,{
+    foreignKey:"author"});
 postModel.belongsTo(userModel,{
     foreignKey:"author",
     onDelete:"CASCADE",
     onUpdate:"CASCADE",
 })
-
 export default postModel
